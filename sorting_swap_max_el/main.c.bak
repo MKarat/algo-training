@@ -1,6 +1,16 @@
 #include <stdio.h>
 
-#include "../common/array_io.h"
+#include "../common/array_input.h"
+
+void PrintArray(char* message, double* array, int array_size){
+
+    printf("%s", message);
+    printf("\n");
+    for (int i = 0; i < array_size; ++i){
+        printf("%f ",array[i]); 
+    }
+    printf("\n");
+}
 
 int FindMax (double* array, int array_size){
     

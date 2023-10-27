@@ -7,9 +7,9 @@
 // Функция заполняет одномерный массив данными из файла 
 // и возвращает его длину
 // ВАЖНО! Необходимо выполнить free после использования array
-int FillArray(const char* file_name, double** array){
+unsigned int FillArray(const char* file_name, double** array){
 
-        // Открытие файла на чтение
+    // Открытие файла на чтение
     FILE* input_file = NULL;
     input_file = fopen(file_name, "r");
     
@@ -38,15 +38,15 @@ int FillArray(const char* file_name, double** array){
 
     fclose(input_file);  // закрытие файла
 
-    return (int)array_size;
+    return array_size;
 }
 
 
-void PrintArray(char* message, double* array, int array_size){
+void PrintArray(char* message, double* array, unsigned int array_size){
 
     printf("%s", message);
     printf("\n");
-    for (int i = 0; i < array_size; ++i){
+    for (unsigned int i = 0; i < array_size; ++i){
         printf("%f ",array[i]); 
     }
     printf("\n");
