@@ -2,10 +2,8 @@
 // основанного на индексах
 
 #include <stdio.h>
-#include "../common/array_io.h" 
-
-// Функция обмена значений под двумя указателями
-void Swap(double* ptr1, double* ptr2);
+#include "../common/array_io.h"
+#include "../common/array_operations.h" 
 
 // Функция построения пирамиды
 void BuildHeap(double* array, unsigned int array_size, double* heap);
@@ -32,13 +30,6 @@ int main (void){
     return 0;
 }
 
-
-// Функция обмена значений под двумя указателями
-void Swap(double* ptr1, double* ptr2){
-    double buf = *ptr1;
-    *ptr1 = *ptr2; 
-    *ptr2 = buf;
-}
 
 // Функция построения пирамиды
 void BuildHeap(double* array, unsigned int array_size, double* heap){
