@@ -4,7 +4,7 @@
 #include "../common/array_io.h"
 
 // функция слияния двух неубывающих последовательностей
-int merge_sorted (double** c, const double* a, const double* b, 
+int MergeSorted (double** c, const double* a, const double* b, 
                             unsigned int na, unsigned int nb);
 
 
@@ -22,7 +22,7 @@ int main (void){
        
     double* array_C = NULL;
     unsigned int size_C = 0;
-    size_C = merge_sorted(&array_C, array_A, array_B, size_A, size_B);
+    size_C = MergeSorted(&array_C, array_A, array_B, size_A, size_B);
 
     PrintArray("Merged array C:", array_C, size_C);    
 
@@ -33,7 +33,7 @@ int main (void){
 }
 
 // функция слияния двух неубывающих последовательностей
-int merge_sorted (double** c, const double* a, const double* b, 
+int MergeSorted (double** c, const double* a, const double* b, 
                     unsigned int size_a, unsigned int size_b){
 
     unsigned int size_c = size_a + size_b; // размер объединенного массива
