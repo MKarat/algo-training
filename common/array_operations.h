@@ -8,6 +8,12 @@ void Swap(double* ptr1, double* ptr2){
     *ptr2 = buf;
 }
 
+// Функция копирования элементов одномерного массива
+void CopyArray(double* initial_array, double* target_array, int size){
+    for (int i = 0; i < size; ++i){
+        target_array[i] = initial_array[i];
+    }
+}
 
 // функция слияния двух неубывающих последовательностей
 int MergeSorted (double** c, const double* a, const double* b, 
