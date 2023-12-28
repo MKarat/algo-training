@@ -1,6 +1,32 @@
 #ifndef ARRAY_OPERATIONS
 #define ARRAY_OPERATIONS
 
+#include <stdlib.h>
+#include <stdio.h>
+
+// Функция вставки элемента в массив
+int Insert(double* array, int* size, int insert_index, double insert_value){
+    
+    // Проверка корректности индекса
+    if (insert_index < 0 || insert_index > *size){
+        printf("ERROR: Insertion index is out of range\n");
+        return 1;
+    }
+    
+    // Расширим веделенную память на один элемент
+    ++(*size);
+    array =(double*)realloc(array, sizeof(double)*(*size));
+
+    // Осуществим сдвиг вправо элементов, находящихся после индекса вставки     
+    for(int i = (*size)-1; i > insert_index; --i){
+        array[i] = array[i-1];
+    }
+
+    array[insert_index] = insert_value;     // вставка элемента
+    
+    return 0;
+}
+
 // Функция обмена значений под двумя указателями
 void Swap(double* ptr1, double* ptr2){
     double buf = *ptr1;
