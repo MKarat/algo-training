@@ -4,6 +4,25 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// Функция удаления элемента из массива
+int Delete(double* array, int* size, int delete_index){
+    
+    // Проверка корректности индекса
+    if (delete_index < 0 || delete_index >= *size){
+        printf("ERROR: Deletion index is out of range\n");
+        return 1;
+    }
+
+    // Удаление путем сдвига всех элементов справа
+    for (int i = delete_index; i < (*size)-1; ++i){
+        array[i] = array[i+1];
+    }
+
+    --(*size);
+
+    return 0;
+}
+
 // Функция вставки элемента в массив
 int Insert(double* array, int* size, int insert_index, double insert_value){
     
